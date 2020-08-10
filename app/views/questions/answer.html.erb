@@ -1,0 +1,11 @@
+<h2><%= params[:question] %></h2>
+
+<% if params[:question] == 'I am going to work' %>
+      <%= @answer[0] %>
+<% elsif params[:question].end_with?("?") %>
+      <%= @answer[1] %>
+<% else %>
+      <%= @answer[2] %>
+<% end %>
+
+<%= link_to "Ask again?", ask_path %>
